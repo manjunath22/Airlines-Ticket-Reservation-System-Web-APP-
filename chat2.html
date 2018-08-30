@@ -1,0 +1,423 @@
+<html>
+
+    <head>
+
+        <title>Fight</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+    
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css" media="screen,projection">
+        <link type="text/css" rel="stylesheet" href="main.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        
+        
+     
+        <style>
+    
+       body 
+            {
+                font-family: Arial, Helvetica, sans-serif; 
+                background-image:url(https://images.unsplash.com/photo-1521871173595-c24e09d8ba4b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=799753317495398fe428f78387d7b428&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb);
+               background-repeat: no-repeat;
+			   background-size: cover;
+			   background-attachment: fixed;
+               
+            }
+    
+            
+            #head
+            {
+                background: linear-gradient(to right,#fc0259,#118cff);
+                text-align: center;
+                opacity: 0.7;
+                color: white;
+                font-family: 'Chela One', cursive;
+                position:relative;
+                top:-41px;
+            }
+            
+           .carousel
+			{    
+         
+                height:700;
+                margin-top: 60px;
+			}
+            
+			
+            .colour
+            {
+                color:white;
+                position:relative;
+                top:50px;
+            }
+            
+            
+           
+            
+             #bsp
+            {
+                margin-right:200px;
+                position:fixed;
+                top:650px;
+                left:87%;
+                width:90px;
+                height:90px;
+                border-radius: 45px;
+                background-image: url(https://cdn.dribbble.com/users/722835/screenshots/4082720/bot_icon.gif); 
+                background-repeat: no-repeat;
+                background-size: 90px 90px;
+            }
+
+
+          
+            .tt
+            {
+                position:relative;
+                top:80px;
+            }
+            /* Extra styles for the cancel button */
+            .cancelbtn {
+                width: auto;
+                padding: 10px 18px;
+                background-color: #f44336;
+            }
+
+            /* Center the image and position the close button */
+            .imgcontainer {
+                text-align: center;
+                margin: 10px 0 12px 0;
+                position: relative;
+            }
+
+            img.avatar {
+                width: 40%;
+                border-radius: 50%;
+            }
+            
+            .container {
+                padding: 16px;
+            }
+
+            span.psw {
+                float: right;
+                padding-top: 16px;
+            }
+            
+            .modal
+            {
+                width:750px;
+                height: 300px;
+                margin-top:150px;
+                background-color:cornflowerblue;
+            }
+
+            /* The Modal (background) */
+            .modal2 {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                padding-top: 60px;
+            }
+
+            /* Modal Content/Box */
+            .modal-content1
+            {
+                background-color: #fefefe;
+                margin: 0% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+                border: 1px solid #888;
+                width: 80%; 
+                float:right;
+                /* Could be more or less, depending on screen size */
+            }
+
+            /* The Close Button (x) */
+            .close 
+            {
+                position: absolute;
+                right: 25px;
+                top: 0;
+                color: #000;
+                font-size: 35px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: red;
+                cursor: pointer;
+            }
+
+            /* Add Zoom Animation */
+            .animate 
+            {
+                -webkit-animation: animatezoom 0.6s;
+                animation: animatezoom 0.6s;
+                width:400px;height:500px;
+                border: solid;
+                border-radius: 10px;
+                background-image: url(https://cdn.pixabay.com/photo/2016/04/07/21/14/chat-1314741_960_720.jpg);
+                background-repeat: no repeat;
+                background-size: 400px 500px ;
+                margin-top: 50px;
+                margin-right:20px;
+            }
+
+            @-webkit-keyframes animatezoom {
+                from {-webkit-transform: scale(0)} 
+                to {-webkit-transform: scale(1)}
+            }
+
+            @keyframes animatezoom {
+                from {transform: scale(0)} 
+                to {transform: scale(1)}
+            }
+
+            /* Change styles for span and cancel button on extra small screens */
+            @media screen and (max-width: 300px) {
+                span.psw {
+                   display: block;
+                   float: none;
+                }
+                .cancelbtn {
+                   width: 100%;
+                }
+            }
+            
+            
+            .page-footer
+            {
+                margin-top:20%;
+                background-color: blue;
+            }
+            
+           .fa-github
+            {
+                font-size:75px;
+                margin:-180px 0 0 988px;
+                color:white;
+            }
+           
+        </style>
+    
+    </head>
+    
+    <body>
+            
+           
+    <nav style="position: fixed;left:65px;margin:-65;z-index:2;background-color: blue">
+   <div class="nav-wrapper">
+       <a href="#" class="brand-logo"><span style="position: relative;left:690">AIRLINES</span></a>
+       <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="{{ url_for('chatHome')}}">Home</a></li>
+        <li><a href="{{ url_for('chat1')}}">Search</a></li>
+        <li><a href="{{ url_for('chat2')}}">Flight</a></li>
+        <li><a href="{{ url_for('chat3')}}">Passenger</a></li>
+        <li><a href="{{ url_for('chat4')}}">Booking</a></li>
+        <li><a href="{{ url_for('log')}}">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+        <div id="back">
+            <div class="carousel carousel-slider" data-indicators="true">
+               
+                 
+                <a class="carousel-item" href="#one!"><img src="https://wallpapercave.com/wp/gVij6GH.jpg" height="700px"></a>
+                <a class="carousel-item" href="#two!"><img src="https://wallpapercave.com/wp/s9nIMMH.jpg" height="700px"></a>
+                <a class="carousel-item" href="#three!"><img src="https://www.hdwallpapers.in/download/aeroplane-HD.jpg" height="700px"></a>
+                <a class="carousel-item" href="#four!"><img src="https://wallpaperwire.com/wp-content/uploads/2018/03/Aeroplane-HD-Wallpapers-51.jpg" height="700px"></a>
+                <a class="carousel-item" href="#five"><img src="https://www.themanufacturer.com/wp-content/uploads/2015/09/Although-lightning-strikes-are-rarely-the-primary-cause-of-accidents-they-can-cause-costly-delays-and-service-interruptions-image-courtesy-of-DFC.jpg" height="700px"></a>
+                <a class="carousel-item" href="#six"><img src="https://wallpapercave.com/wp/baHpXzf.jpg"></a>
+                
+            </div>
+
+        </div>
+           
+           <div style="width:25%;margin-left:38%;margin-top: 3%;">
+           <form method='post' action='/chat21'>
+                <h5>Flight ID</h5> 
+                <input type="text" name="flightid">
+               <button value="login" class="button" style="width:100px;height:40px;vertical-align:middle;position:relative;left:28%;top:85px;border-radius:5px"><span style="font-size: 18px"><strong><i>Search</i></strong></span></button>
+                          <a style="margin-left:18px;top:150px;background-color:navy;width:120px;" class="waves-effect waves-light btn modal-trigger" href="#modal1">Show</a>
+
+            </form>
+            </div>
+            
+            
+    
+        
+        <div>
+             
+           
+
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                                  
+                        <table class="striped" class="highlight" class="centered" class="responsive-table">
+                             <thead>
+                                <tr>
+                                     <th>Flight name</th>
+                                    <th>Flight Code</th>
+                                    <th>Source</th>
+                                    <th>Destination</th>
+                                    <th>f_date</th>
+                                    <th>f_time</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {% if row is defined %}
+                                {% for rows in row %}
+                                <tr>
+                                    <td>{{rows[0]}}</td>
+                                    <td>{{rows[1]}}</td>
+                                    <td>{{rows[2]}}</td>
+                                    <td>{{rows[3]}}</td>
+                                    <td>{{rows[4]}}</td>
+                                    <td>{{rows[5]}}</td>
+                                </tr>
+                                {% endfor %}
+                                {% endif %}
+                              <!--  <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                 
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>-->
+                                </tbody>
+                              </table>
+
+                        </div>
+                
+                    <a href="#!" style="position:relative;margin-left:323px;top:40px;background-color: blue;width:100px" class="modal-close waves-effect waves-green btn">Ok</a>
+                
+                </div>
+            
+            </div>
+           
+           
+           <footer class="page-footer">
+              <div class="container">
+                <div class="row">
+                  <div class="col l6 s12" style="margin-left:-100px">
+                        <h5 class="white-text">Credits</h5>
+                        <p class="grey-text text-lighten-4">Manoj Kumar <span>1RN15CS002</span></p>
+                        <p class="grey-text text-lighten-4">Amith R Koradakeri <span>1RN15CS019</span></p>
+                        <p class="grey-text text-lighten-4">Deepak <span>1RN15CS041</span></p>
+                        <p class="grey-text text-lighten-4">Kushal Gowda <span>1RN15CS053</span></p>
+                         <p class="grey-text text-lighten-4">Manjunath <span>1RN15CS059</span></p>
+                    </div>
+                </div>
+                  <a class="fa fa-github" href="https://github.com/nanduladeepak/airline-system.git"><h6 style="margin-left: 10px">Github</h6></a>
+                </div>
+            </footer>
+           
+            <script>
+            
+                var modal = document.getElementById('id01');
+                window.onclick = function(event) 
+                {
+                    if (event.target == modal)
+                    {
+                        modal.style.display = "none";
+                    }
+                }
+                
+            </script>
+            
+             <script>
+            
+                var modal = document.getElementById('id02');
+                window.onclick = function(event) 
+                {
+                    if (event.target == modal)
+                    {
+                        modal.style.display = "none";
+                    }
+                }
+                
+            </script>
+
+
+            <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js "></script>
+            <script>
+                $(document).ready(function() {
+                $('input#input_text, textarea#textarea2').characterCounter();
+                });       
+            </script>
+            
+            <script> 
+                
+                $('.carousel.carousel-slider').carousel({
+   
+                indicators: true
+                
+                });
+                
+                $(document).ready(function(){
+                    
+                    setInterval(function(){
+                        
+                    $('.carousel').carousel('next')
+                } , 3000)
+                
+                });
+          
+            </script>
+            
+            <script>
+                
+                
+                $(document).ready(function(){
+                $('.datepicker').datepicker();
+                });
+            </script>
+            
+            <script>
+        
+                $(document).ready(function(){
+                $('select').formSelect();
+                });
+                
+            </script>
+            
+            <script>
+        
+                $(document).ready(function(){
+                    
+                $('.timepicker').timepicker();
+                });
+                    
+            </script>
+            
+            <script>
+            
+                $(document).ready(function(){
+                $('.modal').modal();
+                });
+            
+            </script>
+
+    </body>
+    
+</html>

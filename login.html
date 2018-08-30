@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css" media="screen,projection">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	  
+	  <title>Login</title>
+	  <style>
+	  
+		body
+		{
+			background-image:url(https://www.virginexperiencedays.co.uk/content/img/product/large/PFLYGP-SP6.jpg);
+			background-repeat: no-repeat;
+			background-size: 100% 125%;
+            height:auto;
+		}
+		
+		.row
+		{
+			position:relative;
+			top:60px;left:9%;
+			width:750px;
+		}
+          
+		.header
+		{
+			background-color:#63625d;
+			position:relative;
+			top:-42px;
+			color:white;
+			font-family:serif;	
+		}
+		
+		.logg
+		{
+			background-image:url(https://www.virginexperiencedays.co.uk/content/img/product/large/PFLYGP-SP6.jpg);
+			background-repeat: no-repeat;
+			background-size:100% 110%;
+			width: 800px;
+			height:600px;
+			border: 2px solid #3b3c3d;
+			border-radius:10px;
+			margin:50px 0 0 225px;	
+            position: relative;
+            left:20%;
+            top:50px;
+		}
+          
+          
+        .button span 
+        {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after 
+        {
+          content: '\00bb';
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          right: -20px;
+          transition: 0.5s;
+        }
+
+        .button:hover span {
+          padding-right: 25px;
+        }
+
+        .button:hover span:after {
+          opacity: 1;
+          right: 0;
+        }
+		
+          
+        * {box-sizing: border-box}
+            .modal
+            {
+                position:relative;
+                top:-650px;
+                background-color: orange;
+                width:56%;
+                height: 660px;
+                display
+                
+            }
+          
+            .button1 {
+                background-color: #4CAF50;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 80%;
+                opacity: 0.9;
+            }
+
+            .button1:hover {
+                opacity:1;
+            }
+
+            /* Extra styles for the cancel button */
+            .cancelbtn {
+                padding: 14px 20px;
+                background-color: #f44336;
+            }
+
+            /* Float cancel and signup buttons and add an equal width */
+            .cancelbtn, .signupbtn {
+              float: left;
+              width: 50%;
+            }
+
+            /* Modal Content/Box */
+            .modal-content {
+                
+               
+                 background-image: url(https://cdn5.vectorstock.com/i/1000x1000/57/74/plane-icon-flying-on-orange-background-vector-8655774.jpg);
+                background-repeat: no-repeat;
+                background-size: 850px 935px;
+            }
+
+            /* Style the horizontal ruler */    
+
+            /* The Close Button (x) */
+            .close {
+                position: absolute;
+                right: 30px;
+                top: 0px;
+                font-size: 40px;
+                font-weight: bold;
+                color: black;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #f44336;
+                cursor: pointer;
+            }
+
+            /* Clear floats */
+            
+            /* Change styles for cancel button and signup button on extra small screens */
+          
+		
+	  </style>
+    </head>
+
+    <body>
+	
+		
+		<div class="header">
+				
+				<h1 style="text-align:center;color:#cecbbe">Login</h1>
+		
+		</div>
+		
+
+		<div class="logg">
+			<div class="row">
+				<form class="col s12" method='post' action='/login'>
+					<div class="row">
+						{% if error is defined %}
+						<h4 style="color:red;"><b>Incorrect Email or Password</b></h4>
+						{% endif %}
+						<div class="input-field col s6">
+							<i class="material-icons prefix" style="font-size:43px;color:white;">account_circle</i>
+							<input id="icon_prefix" type="text" style="color:white" class="validate" name="email">
+							<label for="icon_prefix" style="color:white;font-size:22px;">User Name</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s6">
+							<i class="material-icons prefix" style="font-size:43px;color:white;">lock_outline</i>
+							<input id="icon_password" type="Password" style="color:white" class="validate" name="password">
+							<label for="icon_password" style="color:white;font-size:22px;">Password</label>
+						</div>
+					</div>
+					 <button class="button" style="width:100px;height:40px;vertical-align:middle;position:relative;left:30%;top:100px;border-radius:5px"><span style="font-size: 18px"><strong><i>Login</i></strong></span></button>
+				</form>
+			</div>
+		
+	
+		
+           
+			
+            <button class="button" style="width:100px;height:40px;vertical-align:middle;position:relative;left:41%;top:160px;border-radius:5px" onclick="document.getElementById('id01').style.display='block'"><span><strong style="font-size: 16px"><i>Sign Up</i></strong></span></button>
+  
+      
+        </div>
+			
+			
+        <div>
+            
+            
+        <div id="id01" class="modal">
+            <nav style="height:85px;background-color:#e8932c">
+            <h3 style="position:relative;left:40%;top:15px;color:black">Sign Up</h3>
+            </nav>
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <form method='post' action='/signup' class="modal-content" action="/action_page.php">
+                   <div id="elements" style="color:black;position:relative;top:-60px">
+                    <div class="row" style="position: relative;left:-220px;top:10px;width:50%">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">person</i>
+                                    <input id="first_name" name="f_name" type="text" class="validate" required>
+                                    <label for="first_name"><strong style="color:black;font-size: 18px">First Name</strong></label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">person</i>
+                                    <input id="last_name" name="l_name" type="text" class="validate">
+                                    <label for="last_name"><strong style="color:black;font-size: 18px">Last Name</strong></label>
+                                </div>
+                            </div>
+                            <div id="gender" style="position: relative;left:50px;top:50px;">
+                                <p>
+                                    <label>
+                                        <input class="with-gap" name="group1" value="male" type="radio"/>
+                                        <span><strong style="color:black;font-size: 18px">Male</strong></span>
+                                    </label>
+
+                                    <label>
+                                        <input class="with-gap" name="group1" value="female" type="radio"/>
+                                        <span><strong style="color:black;font-size: 18px">Female</strong></span>
+                                    </label>
+                                </p>
+                            </div>
+                             <div class="input-field col s6" style="margin-left:47px;width:80%;margin-top:97px;">
+                                    <i class="material-icons prefix">create</i>
+                                    <input id="countrey" name="country" type="text" class="validate" required>
+                                    <label for="countrey"><strong style="color:black;font-size: 18px">Country</strong></label>
+                               </div>
+                            <div style="width:70%;margin-left:450px;margin-top: 80px;">
+                            	<i class="material-icons prefix">event_note</i>
+                            	<strong style="font-size:20px;position:relative;top:-5px;">DOB<input name="dob" type="date" value="date"></strong>
+                            </div>
+                             <div class="row" style="position: relative;top:0px;">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">location_on</i>
+                                    <input id="address" type="text" name="address" class="validate" required>
+                                    <label for="address"><strong style="color:black;font-size: 18px">Address</strong></label>
+                                </div>
+                            </div>
+                            <div class="row" style="position: relative;top:0px;">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">email</i>
+                                    <input id="email" type="email" name="email" class="validate" required>
+                                    <label for="email"><strong style="color:black;font-size: 18px">Email</strong></label>
+                                </div>
+                            </div>
+                            <div class="row" style="position: relative;top:-25px;">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">lock_outline</i>
+                                    <input id="password" type="password" name="password" class="validate" required pattern="[a-zA-Z]{8,12}" title="The password Should contain only letters ranging between 8 to 12 Characters">
+                                    <label for="password"><strong style="color:black;font-size: 18px">Password</strong></label>
+                                </div>
+                            </div>
+                            
+                            <div class="row" style="position: relative;top:-50px;width:150%;">                                
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">phone</i>
+                                    <input id="icon_telephone" type="tel" name="phone" class="validate">
+                                    <label for="icon_telephone"><strong style="color:black;font-size: 18px">Telephone</strong></label>
+                                </div>
+                            </div>
+                            <div>
+                            <div class="input-field col s6" style="margin-left:90%;width:80%;margin-top: -140px;">
+                            		<i class="material-icons prefix">flight</i>
+                                    <input id="text" type="text" name="idc" class="validate" required pattern="[a-zA-Z][0-9]{6}">
+                                    <label for="text"><strong style="color:black;font-size: 18px">Passport ID</strong></label>
+                            </div>
+                            </div>
+                           
+                        </form>
+                    </div>
+                    <div id="bb" style="position: relative;left:55%;top:0px">
+                        <button class="button1" style="vertical-align:middle;position:relative;left:-45%;top:-45px" value="signup"><span style="font-size: 22px;color:black;"><strong><i>SignUp</i></strong></span></button>
+                    </div>
+                    </div>
+                </form>
+            </div>
+
+			    
+			    
+			    
+			    
+			    
+			    
+			</div>
+			
+		
+	  <script>
+                var modal = document.getElementById('id01');
+                window.onclick = function(event) 
+                {
+                    if (event.target == modal) 
+                    {
+                        modal.style.display = "none";
+                        body.style.height = "auto";
+                    }
+                }
+            </script>
+            
+        <script>
+             </script>
+         <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js "></script>
+	  <script>
+			$(document).ready(function() {
+			$('input#input_text, textarea#textarea2').characterCounter();
+			});       
+	       </script>
+        
+      
+
+        </body>
+</html>

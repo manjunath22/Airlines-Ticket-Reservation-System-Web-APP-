@@ -1,0 +1,228 @@
+<html>
+
+    <head>
+
+        <title>Fight</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css" media="screen,projection">
+        <link type="text/css" rel="stylesheet" href="main.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        
+        <style>
+    
+            body 
+            {
+                font-family: Arial, Helvetica, sans-serif; 
+                background-image:url(https://images.unsplash.com/photo-1521871173595-c24e09d8ba4b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=799753317495398fe428f78387d7b428&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb);
+               background-repeat: no-repeat;
+			   background-size: cover;
+			   background-attachment: fixed;
+               
+            }
+    
+            
+            #head
+            {
+                background: linear-gradient(to right,#fc0259,#118cff);
+                text-align: center;
+                opacity: 0.7;
+                color: white;
+                font-family: 'Chela One', cursive;
+                position:relative;
+                top:-41px;
+            }
+            
+           .carousel
+			{    
+         
+                height:700;
+                margin-top: 60px;
+			}       
+			
+            
+            .page-footer
+            {
+                margin-top:5%;
+                background-color: blue;
+            }
+            
+           .fa-github
+            {
+                font-size:75px;
+                margin:-180px 0 0 988px;
+                color:white;
+            }
+			    
+           
+        </style>
+    
+    </head>
+    
+    <body>
+            
+           
+            <nav style="position: fixed;left:65px;margin:-65;z-index:2;background-color: blue">
+           <div class="nav-wrapper">
+               <a href="#" class="brand-logo"><span style="position: relative;left:650">AIRLINES</span></a>
+               <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="{{ url_for('chatHome')}}">Home</a></li>
+                <li><a href="{{ url_for('chat1')}}">Search</a></li>
+                <li><a href="{{ url_for('chat2')}}">Flight</a></li>
+                <li><a href="{{ url_for('chat3')}}">Passenger</a></li>
+                <li><a href="{{ url_for('chat4')}}">Booking</a></li>
+                <li><a href="{{ url_for('log')}}">Logout</a></li>
+                
+                <!--<li><a href="{{ url_for('chat1')}}"><button value="login" class="button" style="width:100px;height:40px;vertical-align:middle;position:relative;left:28%;top:85px;border-radius:5px"><span style="font-size: 18px"><strong><i>Search</i></strong></span></button></a>-->
+                
+                
+              </ul>
+            </div>
+          </nav>
+
+            <div id="back">
+            <div class="carousel carousel-slider" data-indicators="true">
+               
+                 
+                <a class="carousel-item" href="#one!"><img src="https://wallpapercave.com/wp/gVij6GH.jpg" height="700px"></a>
+                <a class="carousel-item" href="#two!"><img src="https://wallpapercave.com/wp/s9nIMMH.jpg" height="700px"></a>
+                <a class="carousel-item" href="#three!"><img src="https://www.hdwallpapers.in/download/aeroplane-HD.jpg" height="700px"></a>
+                <a class="carousel-item" href="#four!"><img src="https://wallpaperwire.com/wp-content/uploads/2018/03/Aeroplane-HD-Wallpapers-51.jpg" height="700px"></a>
+                <a class="carousel-item" href="#five"><img src="https://www.themanufacturer.com/wp-content/uploads/2015/09/Although-lightning-strikes-are-rarely-the-primary-cause-of-accidents-they-can-cause-costly-delays-and-service-interruptions-image-courtesy-of-DFC.jpg" height="700px"></a>
+                <a class="carousel-item" href="#six"><img src="https://wallpapercave.com/wp/baHpXzf.jpg"></a>
+                
+            </div>
+
+        </div>
+              
+           
+         <div>
+            
+            
+            
+            <div class="w3-container">
+              
+                <div class="i1">
+                  
+                <div class="w3-card" style="width:20%;margin:100px 30px 0 40px;float:left;">
+                       
+                    <a href="{{ url_for('chat1')}}"><img  src="http://gifimage.net/wp-content/uploads/2017/09/animated-gif-search-13.gif" alt="search" width="100%" height="30%"></a>
+
+                        <div class="w3-container" style="text-align: center">
+
+                            <a href="{{ url_for('chat1')}}"><h5>Search</h5></a>
+
+                        </div>
+                    
+                    </div>
+              
+                </div>
+              
+              
+                 <div class="i1">
+                  
+                <div class="w3-card" style="width:20%;margin:100px 30px 0 30px;float:left;">
+                       
+                    <a href="{{ url_for('chat2')}}"><img  src="https://media.giphy.com/media/WKJpCXfvBHyla/giphy.gif" alt="search" width="100%" height="30%"></a>
+
+                        <div class="w3-container" style="text-align: center">
+
+                            <a href="{{ url_for('chat2')}}"><h5>Flight</h5></a>
+
+                        </div>
+                    
+                    </div>
+              
+                </div>
+              
+               <div class="i1">
+                  
+                <div class="w3-card" style="width:20%;margin:100px 40px 0 30px;float:left;">
+                       
+                    <a href="{{ url_for('chat3')}}"><img  src="https://articulate-heroes.s3.amazonaws.com/uploads/rte/mxwgbrie_airline-passengers.jpg" alt="search" width="100%" height="30%"></a>
+
+                        <div class="w3-container" style="text-align: center">
+
+                            <a href="{{ url_for('chat3')}}"><h5>Passenger</h5></a>
+
+
+                        </div>
+                    
+                    </div>
+              
+                </div>
+                
+                
+                 <div class="i1">
+                  
+                <div class="w3-card" style="width:20%;margin-top:100px;float:left;">
+                       
+                    <a href="{{ url_for('chat4')}}"><img  src="https://cdn.dribbble.com/users/887568/screenshots/3827131/computer.gif" alt="search" width="100%" ></a>
+
+                        <div class="w3-container" style="text-align: center">
+
+                            <a href="{{ url_for('chat4')}}"><h5>Booking</h5></a>
+
+                        </div>
+                    
+                    </div>
+              
+                </div>
+              
+            </div> 
+            
+            
+            
+            
+        </div>
+
+            
+            <footer class="page-footer">
+              <div class="container">
+                <div class="row">
+                  <div class="col l6 s12" style="margin-left:-100px">
+                        <h5 class="white-text">Credits</h5>
+                        <p class="grey-text text-lighten-4">Manoj Kumar <span>1RN15CS002</span></p>
+                        <p class="grey-text text-lighten-4">Amith R Koradakeri <span>1RN15CS019</span></p>
+                        <p class="grey-text text-lighten-4">Deepak <span>1RN15CS041</span></p>
+                        <p class="grey-text text-lighten-4">Kushal Gowda <span>1RN15CS053</span></p>
+                         <p class="grey-text text-lighten-4">Manjunath <span>1RN15CS059</span></p>
+                    </div>
+                </div>
+                  <a class="fa fa-github" href="https://github.com/nanduladeepak/airline-system.git"><h6 style="margin-left: 10px">Github</h6></a>
+                </div>
+            </footer>
+            
+            <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js "></script>
+            <script>
+                $(document).ready(function() {
+                $('input#input_text, textarea#textarea2').characterCounter();
+                });       
+            </script>
+            
+            <script> 
+                
+                $('.carousel.carousel-slider').carousel({
+   
+                indicators: true
+                
+                });
+                
+                $(document).ready(function(){
+                    
+                    setInterval(function(){
+                        
+                    $('.carousel').carousel('next')
+                } , 3000)
+                
+                });
+                     
+            </script>
+          
+    </body>
+    
+</html>
